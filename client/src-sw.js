@@ -29,7 +29,8 @@ registerRoute(({ request }) => ['style', 'script', 'worker'].includes(request.de
 pageCache,
   new StaleWhileRevalidate({
     cacheName: 'asset-cache',
-  })
+  }),
+  offlineFallback(),
 );
 
 // TODO: Implement asset caching
